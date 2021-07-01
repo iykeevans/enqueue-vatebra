@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enqueue</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+  <body>
+    <nav id="navigation" class="nav position-fixed w-100" style="z-index: 1000">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a
+          href="#"
+          class="text-decoration-none text-white font-weight-bold text-lg"
+        >
+          <img
+            src="./image/vatebra-logo.png"
+            alt="vatebra-logo"
+            style="height: 70px"
+          />
+        </a>
+
+        <div class="nav-links d-md-flex d-none">
+          <a
+            href="#what-to-expect"
+            class="text-decoration-none text-white ms-5"
+          >
+            What To Expect
+          </a>
+          <a href="#alumni" class="text-decoration-none text-white ms-5"
+            >Alumni</a
+          >
+          <a href="#curriculum" class="text-decoration-none text-white ms-5"
+            >Curriculum</a
+          >
+          <a href="#tutors" class="text-decoration-none text-white ms-5"
+            >Tutors</a
+          >
+          <a href="#partners" class="text-decoration-none text-white ms-5"
+            >Partners</a
+          >
+        </div>
+
+        <div class="d-none d-md-block">
+          <!-- <a
+            href="#"
+            class="
+              text-decoration-none text-white
+              border
+              px-4
+              py-2
+              rounded
+              me-3
+            "
+            >Login</a
+          > -->
+
+          <a
+            href="#"
+            class="
+              nav-link--has-bg
+              text-decoration-none text-enqueue-primary-color
+              rounded
+              bg-white
+              font-weight-medium
+            "
+          >
+            Apply now
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="banner h-screen position-relative">
+      <div
+        class="
+          banner__image
+          position-absolute
+          animate__animated animate__backInRight
+        "
+        style="right: 0"
+      >
+        <img src="./image/banner-img.png" alt="banner image" class="h-100" />
+      </div>
+
+      <div class="container">
+        <div class="d-flex">
+          <div
+            class="
+              col-md-6
+              onset-md-6
+              d-flex
+              flex-column
+              animate__animated animate__backInLeft
+            "
+            style="margin-top: 150px"
+          >
+            <h1
+              class="banner__title text-white my-0 py-0 mb-4"
+              style="width: 70%"
+            >
+              Kickstart your Tech career
+            </h1>
+
+            <p
+              class="my-0 py-0 px-0 text-lg mb-5 text-white lh-base"
+              style="width: 60%"
+            >
+              Get the skills needed to burst into your career in the tech world
+            </p>
+
+            <a
+              href="#"
+              class="
+                banner__link
+                text-enqueue-primary-color
+                bg-white
+                text-decoration-none
+                align-self-start
+                rounded
+                font-weight-medium
+              "
+              >Apply Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- seemless learning -->
+    <section style="padding: 80px 0" id="what-to-expect">
+      <div class="container">
+        <h1
+          class="text-center heading-font"
+          style="font-size: 32px; margin-bottom: 80px"
+        >
+          Guaranteeing seemless learning experience
+        </h1>
+
+        <div class="row">
+          <div
+            class="col-md-4 text-center d-flex flex-column align-items-center"
+          >
+            <div>
+              <img src="./image/Group 12089.svg" alt="cancel" />
+            </div>
+
+            <div class="heading-font text-xl mb-2 mt-2">No tuition fee</div>
+
+            <p class="text-base px-0 py-0" style="width: 64%">
+              Our zero tuition fee policy guarantees that you owe us nothing
+              until you get a job
+            </p>
+          </div>
+
+          <div
+            class="col-md-4 text-center d-flex flex-column align-items-center"
+          >
+            <div>
+              <img src="./image/Group 12090.svg" alt="cancel" />
+            </div>
+
+            <div class="text-xl heading-font mb-2 mt-2">
+              Flexible Learning Journey
+            </div>
+
+            <p class="text-base px-0 py-0" style="width: 64%">
+              We have both an online and offline learning platform ready to fit
+              into your lifestyle.
+            </p>
+          </div>
+
+          <div
+            class="col-md-4 text-center d-flex flex-column align-items-center"
+          >
+            <div>
+              <img src="./image/Group 20.svg" alt="cancel" />
+            </div>
+
+            <div class="heading-font text-xl mb-2 mt-2">
+              Internship and Alumni networks
+            </div>
+
+            <p class="text-base px-0 py-0" style="width: 70%">
+              Real world internship guaranteed and exposure to our alumnis in
+              diverse tech industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- alumni stories -->
+    <section class="position-relative" style="height: 600px" id="alumni">
+      <div>
+        <img
+          src="./image/polygon.svg"
+          alt="polygon"
+          class="position-absolute"
+        />
+        <img src="./image/alumini-line.svg" alt="line" />
+        <img
+          src="./image/alumini-pic.png"
+          alt="alumini-pic"
+          class="position-absolute"
+          style="left: 100px; top: 100px"
+        />
+      </div>
+
+      <div class="container">
+        <h1
+          class="heading-font text-center"
+          style="font-size: 32px; margin-bottom: 100px"
+        >
+          Latest Alumni stories
+        </h1>
+
+        <div class="row">
+          <div class="col-md-7 offset-5">
+            <div class="slider-visible">
+              <div
+                class="d-flex align-items-center"
+                style="margin-bottom: 38px"
+              >
+                <span class="heading-font text-xl">Toyosi Ajayi</span>
+                <span
+                  class="heading-font text-enqueue-primary-color text-xl ms-4"
+                  >Frontend Developer at Cowrywise
+                </span>
+              </div>
+
+              <p
+                class="py-0 px-0 text-right col-md-8"
+                style="margin-bottom: 150px"
+              >
+                <i
+                  >"For me, it was a no-brainer. I wanted to try LOREM because
+                  while the alternatives would give you a tutorial or a course
+                  and thats all, but I had the accountability with this which
+                  helped me alot."</i
+                >
+              </p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <div class="d-flex align-items-center">
+                <div
+                  class="
+                    slider-circle--active
+                    bg-enqueue-primary-color
+                    rounded-circle
+                    cursor-pointer
+                  "
+                ></div>
+
+                <div
+                  class="slider-circle rounded-circle cursor-pointer ms-2"
+                ></div>
+
+                <div
+                  class="slider-circle rounded-circle cursor-pointer ms-2"
+                ></div>
+
+                <div
+                  class="slider-circle rounded-circle cursor-pointer ms-2"
+                ></div>
+              </div>
+
+              <a
+                href="#"
+                class="
+                  text-decoration-none
+                  bg-enqueue-primary-color
+                  text-white
+                  px-3
+                  py-2
+                  rounded
+                "
+                >See all stories</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- curriculum -->
+    <section
+      class="py-3 position-relative"
+      style="height: 700px"
+      id="curriculum"
+    >
+      <div class="container">
+        <h1
+          class="heading-font text-center"
+          style="font-size: 32px; margin-bottom: 50px"
+        >
+          Our Curriculum
+        </h1>
+
+        <div class="d-flex">
+          <div class="col-md-4">
+            <div
+              class="text-lg px-2 py-2 mb-3 mt-5"
+              style="border-left: 3px solid blue"
+            >
+              Software Engineering
+            </div>
+
+            <div class="text-lg px-2 py-2 mb-3">Digital Marketing</div>
+
+            <div class="text-lg px-2 py-2 mb-3">Ui/Ux design</div>
+
+            <div class="text-lg px-2 py-2 mb-3">Data science</div>
+
+            <div class="text-lg px-2 py-2">Ios Development</div>
+          </div>
+
+          <div class="col-md-7 position-absolute" style="right: 0">
+            <div
+              class="bg-enqueue-primary-color rounded py-3 px-4 text-white mb-0"
+              style="font-size: 24px"
+            >
+              LOGO
+            </div>
+
+            <div
+              class="container py-5"
+              style="
+                background: #f4eee8;
+                box-shadow: -4px 4px 20px rgba(29, 43, 54, 0.08);
+                border-radius: 5px;
+                height: 500px;
+              "
+            >
+              <div class="row">
+                <div class="col-md-5">
+                  <h4 class="heading-font text-enqueue-primary-color mb-4">
+                    Technical skills
+                  </h4>
+                  <div class="text-lg mb-3">HTML & CSS</div>
+                  <div class="text-lg mb-3">Ruby</div>
+                  <div class="text-lg mb-3">Ruby on Rails</div>
+                  <div class="text-lg mb-3">JavaScript</div>
+                  <div class="text-lg mb-3">Reacts & Redux</div>
+                  <div class="text-lg">Algorithms</div>
+                </div>
+
+                <div class="col-md-7">
+                  <h4 class="heading-font text-enqueue-primary-color mb-4">
+                    Soft Skills
+                  </h4>
+                  <div class="text-lg mb-3">Effective Networking</div>
+                  <div class="text-lg mb-3">Time Management</div>
+                  <div class="text-lg mb-3">Cross-Cultural Communication</div>
+                  <div class="text-lg mb-3">Remote work Best Practices</div>
+                  <div class="text-lg mb-3">How to Prepare for Interviews</div>
+                  <div class="text-lg">Effective Job Searching</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- tutors -->
+    <section class="position-relative py-5" style="height: 600px" id="tutors">
+      <div>
+        <img
+          src="./image/polygon.svg"
+          alt="polygon"
+          class="position-absolute"
+          style="right: 0; transform: rotate(180deg)"
+        />
+        <img
+          src="./image/alumini-line.svg"
+          alt="line"
+          class="position-absolute"
+          style="bottom: 20px; right: 0"
+        />
+        <img
+          src="./image/tutors-image.png"
+          alt="alumini-pic"
+          class="position-absolute"
+          style="right: 100px; top: 100px"
+        />
+      </div>
+
+      <div class="container">
+        <h1
+          class="heading-font text-center"
+          style="font-size: 32px; margin-bottom: 100px"
+        >
+          Industry Standard Tutors
+        </h1>
+
+        <div class="row">
+          <div class="col-md-7 onset-5">
+            <div class="d-flex align-items-center" style="margin-bottom: 38px">
+              <span class="text-xl heading-font">John Temenu </span>
+              <span class="heading-font text-enqueue-primary-color text-xl ms-4"
+                >Creative director at Invision
+              </span>
+            </div>
+
+            <p
+              class="py-0 px-0 text-right col-md-8"
+              style="margin-bottom: 150px"
+            >
+              <i
+                >"Alone we can do so little; together we can do so much,
+                teamwork is the ability to work together toward a common vision.
+                The ability to direct individual accomplishments toward
+                organizational objectives. It is the fuel that allows common
+                people to attain uncommon results"</i
+              >
+            </p>
+
+            <div class="d-flex justify-content-between">
+              <a
+                href="#"
+                class="
+                  text-decoration-none
+                  bg-enqueue-primary-color
+                  text-white
+                  px-3
+                  py-2
+                  rounded
+                "
+                >See all stories</a
+              >
+              <div class="d-flex align-items-center">
+                <div
+                  class="rounded-circle"
+                  style="background: #18228f; height: 12px; width: 12px"
+                ></div>
+                <div
+                  class="rounded-circle ms-2"
+                  style="
+                    background: rgba(24, 34, 143, 0.6);
+                    height: 8px;
+                    width: 8px;
+                  "
+                ></div>
+                <div
+                  class="rounded-circle ms-2"
+                  style="
+                    background: rgba(24, 34, 143, 0.6);
+                    height: 8px;
+                    width: 8px;
+                  "
+                ></div>
+                <div
+                  class="rounded-circle ms-2"
+                  style="
+                    background: rgba(24, 34, 143, 0.6);
+                    height: 8px;
+                    width: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- application -->
+    <div style="text-align: center">
+      <a
+        class="typeform-share button"
+        href="https://form.typeform.com/to/AxyYTmn5?typeform-medium=embed-snippet"
+        data-mode="drawer_right"
+        style="
+          display: inline-block;
+          text-decoration: none;
+          background-color: #0445af;
+          color: white;
+          cursor: pointer;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 20px;
+          line-height: 50px;
+          text-align: center;
+          margin: 0;
+          height: 50px;
+          padding: 0px 33px;
+          border-radius: 25px;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-weight: bold;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        "
+        target="_blank"
+        >Launch me
+      </a>
+    </div>
+    <script>
+      (function () {
+        var qs,
+          js,
+          q,
+          s,
+          d = document,
+          gi = d.getElementById,
+          ce = d.createElement,
+          gt = d.getElementsByTagName,
+          id = "typef_orm_share",
+          b = "https://embed.typeform.com/";
+        if (!gi.call(d, id)) {
+          js = ce.call(d, "script");
+          js.id = id;
+          js.src = b + "embed.js";
+          q = gt.call(d, "script")[0];
+          q.parentNode.insertBefore(js, q);
+        }
+      })();
+    </script>
+
+    <!-- partners -->
+    <section class="py-5" id="partners">
+      <h1 class="heading-font text-center" style="font-size: 32px">
+        Trusted, supported and endorsed by
+      </h1>
+
+      <div class="d-flex align-items-center justify-content-center">
+        <img src="./image/partners/andela.png" alt="andela" class="me-5" />
+        <img src="./image/partners/verve.png" alt="verve" class="me-5" />
+        <img src="./image/partners/paypal.png" alt="paypal" class="me-5" />
+        <img
+          src="./image/partners/flutterwave.png"
+          alt="flutterwave"
+          class="me-5"
+        />
+        <img src="./image/partners/paystack.png" alt="paystack" />
+      </div>
+
+      <div class="text-lg text-center mb-5">
+        Over 650 alumni’s with a 94% employment rate in 6months
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <a
+          href="#"
+          class="
+            text-decoration-none
+            bg-enqueue-primary-color
+            text-white
+            px-3
+            py-2
+            rounded
+          "
+          >See all stories</a
+        >
+      </div>
+    </section>
+
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row text-white">
+          <div class="col-md-3">
+            <h5 class="mb-4">Categories</h5>
+            <p>Logo Design</p>
+            <p>Graphics Design</p>
+            <p>Video Editing</p>
+            <p>Web Design</p>
+            <p>Phone Repairs</p>
+            <p>UI/UX Design</p>
+          </div>
+
+          <div class="col-md-3">
+            <h5 class="mb-4">Community</h5>
+            <p>Forum</p>
+            <p>Invite a Friend</p>
+            <p>Join a Team</p>
+          </div>
+
+          <div class="col-md-3">
+            <h5 class="mb-4">About</h5>
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+            <p>Contact us</p>
+            <p>About us</p>
+            <p>Guide</p>
+          </div>
+
+          <div class="col-md-3">
+            <h5 class="mb-4">Support</h5>
+            <p>Recomendation</p>
+            <p>Help and Support</p>
+            <p>Disputes</p>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-5">
+          <div class="text-white d-flex align-items-center">
+            <span class="me-3 text-lg font-weight-bold">Enqueue</span>
+            <span>© Enqueue 2020</span>
+          </div>
+
+          <div>
+            <img
+              src="./image/social-media-icons/Youtube.svg"
+              alt="Youtube"
+              class="me-3"
+            />
+            <img
+              src="./image/social-media-icons/Instagram.svg"
+              alt="Instagram"
+              class="me-3"
+            />
+            <img
+              src="./image/social-media-icons/Facebook.svg"
+              alt="Facebook"
+              class="me-3"
+            />
+            <img src="./image/social-media-icons/Twitter.svg" alt="Twitter" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- main script -->
+    <script src="./js/stickyNav.js"></script>
+  </body>
+</html>
