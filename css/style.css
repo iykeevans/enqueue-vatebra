@@ -206,5 +206,6 @@
   .tutor__picture {
     right: 100px;
     top: 100px;
+    transform: unset;
   }
 }
