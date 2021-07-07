@@ -37,6 +37,10 @@
   font-size: 1rem;
 }
 
+.text-gray {
+  color: #ccc;
+}
+
 .font-weight-medium {
   font-weight: 500;
 }
@@ -104,6 +108,15 @@
 
 .curriculum {
   height: 1300px;
+}
+
+.curriculum__course:hover {
+  border-left: 3px solid var(--enqueue-primary-color);
+  color: #000;
+}
+
+.curriculum__course--active {
+  border-left: 3px solid var(--enqueue-primary-color);
 }
 
 .curriculum__details {
