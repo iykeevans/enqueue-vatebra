@@ -45,6 +45,10 @@
   font-weight: 500;
 }
 
+.object-fit-cover {
+  object-fit: cover;
+}
+
 .heading-font {
   font-family: var(--enqueue-heading-font);
 }
