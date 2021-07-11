@@ -74,22 +74,20 @@
             >Login</a
           > -->
 
-          <a
+          <button
             class="
               nav-link--has-bg
               text-decoration-none text-enqueue-primary-color
               rounded
               bg-white
               font-weight-medium
-              typeform-share
-              button
+              border-0
             "
-            href="https://form.typeform.com/to/AxyYTmn5?typeform-medium=embed-snippet"
-            data-mode="drawer_right"
-            target="_blank"
+            data-bs-toggle="modal"
+            data-bs-target="#applicationModal"
           >
             Apply now
-          </a>
+          </button>
         </div>
 
         <div
@@ -139,7 +137,7 @@
         <a href="#partners" class="text-decoration-none text-white p-4"
           >Partners</a
         >
-        <a
+        <button
           class="
             align-self-start
             ms-4
@@ -148,75 +146,86 @@
             rounded
             bg-white
             font-weight-medium
-            typeform-share
-            button
+            border-0
           "
-          href="https://form.typeform.com/to/AxyYTmn5?typeform-medium=embed-snippet"
-          data-mode="drawer_right"
-          target="_blank"
+          data-bs-toggle="modal"
+          data-bs-target="#applicationModal"
         >
           Apply now
-        </a>
+        </button>
       </div>
     </div>
 
     <!-- banner -->
     <section class="banner position-relative">
-      <div
-        class="
-          banner__image
-          position-absolute
-          animate__animated animate__backInRight
-        "
-        style="right: 0"
-      >
-        <img src="./image/banner-img.png" alt="banner image" class="h-100" />
-      </div>
-
-      <div class="container">
-        <div class="d-flex">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
           <div
             class="
               col-md-6
-              onset-md-6
               d-flex
               flex-column
               animate__animated animate__backInLeft
             "
-            style="margin-top: 150px"
           >
             <h1
-              class="banner__title text-white my-0 py-0 mb-4"
-              style="width: 70%"
+              class="
+                banner__title
+                text-md-start text-center text-white
+                py-0
+                mb-4
+              "
             >
               Kickstart your Tech career
             </h1>
 
             <p
-              class="my-0 py-0 px-0 text-lg mb-5 text-white lh-base"
-              style="width: 60%"
+              class="
+                banner__paragraph
+                my-0
+                py-0
+                px-0
+                text-lg
+                mb-5
+                text-white
+                lh-base
+                text-center text-md-start
+              "
             >
               Get skills needed to boost your career and move you into the tech
               world.
             </p>
 
-            <a
+            <button
               class="
                 banner__link
                 text-enqueue-primary-color
                 bg-white
                 text-decoration-none
-                align-self-start
+                align-self-md-start align-self-center
                 rounded
                 font-weight-medium
-                typeform-share
-                button
+                border-0
               "
-              href="https://form.typeform.com/to/AxyYTmn5?typeform-medium=embed-snippet"
-              data-mode="drawer_right"
-              target="_blank"
-              >Apply Now</a
+              data-bs-toggle="modal"
+              data-bs-target="#applicationModal"
             >
+              Apply Now
+            </button>
+          </div>
+
+          <div
+            class="
+              col-md-6
+              banner__image
+              animate__animated animate__backInRight
+            "
+          >
+            <img
+              src="./image/banner-img.png"
+              alt="banner image"
+              class="h-100"
+            />
           </div>
         </div>
       </div>
@@ -305,7 +314,7 @@
           class="d-none d-md-block"
         />
         <img
-          src="./image/alumini-pic.png"
+          src="./image/alumini-pic.jpg"
           alt="alumini-pic"
           class="position-absolute alumini__picture"
         />
@@ -326,23 +335,27 @@
                 class="d-flex flex-column flex-md-row align-items-center"
                 style="margin-bottom: 38px"
               >
-                <span class="heading-font text-xl">Toyosi Ajayi</span>
+                <span class="heading-font text-xl">Kehinde Williams</span>
                 <span
                   class="
                     heading-font
                     text-enqueue-primary-color text-xl
                     ms-md-4
                   "
-                  >Frontend Developer at Cowrywise
+                  >Robotics Alumini
                 </span>
               </div>
 
               <p class="py-0 px-0 text-right col-md-8">
                 <i
-                  >"For me, it was a no-brainer. I wanted to try LOREM because
-                  while the alternatives would give you a tutorial or a course
-                  and thats all, but I had the accountability with this which
-                  helped me alot."</i
+                  >"Vatebra Tech Hub is a lovely place with an amazing
+                  environment designed in a way that aids and supports learning.
+                  I learnt a lot about robotics and teamwork at Vatebra Tech
+                  Hub. My favorite experience was when we got to display our
+                  projects in front of the Commissioner for Science and Tech,
+                  Lagos State and different other news outlets. It was a fun yet
+                  nerve racking experience. Vatebra tech hub is definitely a
+                  great place to learn."</i
                 >
               </p>
             </div>
@@ -1224,10 +1237,7 @@
         </div>
 
         <div class="d-flex justify-content-center">
-          <a
-            href="https://form.typeform.com/to/AxyYTmn5?typeform-medium=embed-snippet"
-            data-mode="drawer_right"
-            target="_blank"
+          <button
             class="
               text-decoration-none
               bg-enqueue-primary-color
@@ -1235,11 +1245,13 @@
               px-3
               py-2
               rounded
-              typeform-share
-              button
+              border-0
             "
-            >Apply Now</a
+            data-bs-toggle="modal"
+            data-bs-target="#applicationModal"
           >
+            Apply Now
+          </button>
         </div>
       </div>
     </section>
@@ -1330,6 +1342,164 @@
       </div>
     </footer>
 
+    <!-- application modal -->
+    <div
+      class="modal fade"
+      id="applicationModal"
+      tabindex="-1"
+      aria-labelledby="applicationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="applicationModalLabel">Sign up</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="course-reponse-modal-body">
+            <div class="mb-3">
+              <label for="_fname" class="form-label">First name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="_fname"
+                name="_fname"
+                oninput="courseResponse.handleChange(event)"
+                autocomplete="off"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="_lname" class="form-label">Last name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="_lname"
+                name="_lname"
+                oninput="courseResponse.handleChange(event)"
+                autocomplete="off"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="_phoneNo" class="form-label">Phone No</label>
+              <input
+                type="text"
+                class="form-control"
+                id="_phoneNo"
+                name="_phoneNo"
+                oninput="courseResponse.handleChange(event)"
+                autocomplete="off"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="_email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="_email"
+                name="_email"
+                oninput="courseResponse.handleChange(event)"
+                autocomplete="off"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div>
+              <label for="_curriculum" class="form-label">Curriculum</label>
+              <select
+                class="form-select"
+                id="_curriculum"
+                name="_curriculum"
+                oninput="courseResponse.handleChange(event)"
+                autocomplete="off"
+                required
+              >
+                <option selected disabled value="">Choose...</option>
+                <option value="graphics design">Graphics Design</option>
+                <option value="ui/ux design">Ui/Ux Design</option>
+                <option value="software engineering">
+                  Software Engineering
+                </option>
+                <option value="data science">Data Science</option>
+                <option value="3d modelling and animations">
+                  3D Modelling and Animations
+                </option>
+                <option value="robotics training">Robotics Training</option>
+              </select>
+              <div class="valid-feedback">Please select a valid state.</div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary d-flex align-items-center"
+              onclick="courseResponse.handleSubmit()"
+            >
+              Submit
+
+              <div
+                class="spinner-border ms-3 d-none"
+                id="application-modal-spinner"
+                role="status"
+                style="height: 16px; width: 16px"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- thank you modal -->
+    <div
+      class="modal fade"
+      id="thankYouModal"
+      tabindex="-1"
+      aria-labelledby="thankYouModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body" id="thank-you-modal-body"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>
@@ -1337,6 +1507,7 @@
 
     <!-- main script -->
     <script src="./js/stickyNav.js"></script>
+
     <script>
       (function () {
         var qs,
@@ -1429,6 +1600,115 @@
       const currentTab = document.querySelector(".curriculum__course--active");
 
       const courseTabs = new TabHandler(currentTab);
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAy1-vvXV4cXlfpPdV6wnsbCT9h9UieawQ",
+        authDomain: "enqueued-56ef2.firebaseapp.com",
+        projectId: "enqueued-56ef2",
+        storageBucket: "enqueued-56ef2.appspot.com",
+        messagingSenderId: "693533386571",
+        appId: "1:693533386571:web:82e8abd8f6c918691feace",
+        measurementId: "G-FNEB4C7CS3",
+      };
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = app.firestore();
+
+      app.analytics();
+    </script>
+
+    <script>
+      class ResponseHandler {
+        constructor() {
+          this._email = "";
+          this._fname = "";
+          this._lname = "";
+          this._curriculum = "";
+          this._phoneNo = "";
+        }
+
+        setInputClass(isValid = true) {
+          event.target.classList.remove(
+            `${isValid ? "is-invalid" : "is-valid"}`
+          );
+          event.target.classList.add(`${isValid ? "is-valid" : "is-invalid"}`);
+        }
+
+        handleChange(event) {
+          if (!event.target.value.trim()) {
+            this.setInputClass(false);
+          } else {
+            this.setInputClass();
+            this[event.target.name] = event.target.value;
+          }
+        }
+
+        handleSubmit() {
+          console.log(this);
+          document
+            .getElementById("application-modal-spinner")
+            .classList.remove("d-none");
+          let hasError = [];
+
+          for (const key in this) {
+            if (Object.hasOwnProperty.call(this, key)) {
+              if (!this[key]) {
+                document.querySelector(`#${key}`).classList.add("is-invalid");
+                hasError.push(true);
+              } else {
+                hasError.push(false);
+              }
+            }
+          }
+
+          if (!hasError.includes(true)) {
+            console.log("I am Submiting...", db);
+
+            db.collection("users")
+              .add({
+                email: courseResponse.getValue("email"),
+                fname: courseResponse.getValue("fname"),
+                lname: courseResponse.getValue("lname"),
+                phoneNo: courseResponse.getValue("phoneNo"),
+                curriculum: courseResponse.getValue("curriculum"),
+              })
+              .then((res) => {
+                console.log("Document written with ID: ", res.id);
+
+                document
+                  .getElementById("application-modal-spinner")
+                  .classList.add("d-none");
+
+                document.getElementById(
+                  "thank-you-modal-body"
+                ).innerText = `Good bye ${this._fname} ${this._lname} you'll hear from us in a couple of days. Please share with your friends and loved ones`;
+
+                $("#applicationModal").modal("hide");
+                $("#thankYouModal").modal("show");
+              })
+              .catch((err) => console.log(err));
+          }
+        }
+
+        getValue(key) {
+          return this[`_${key}`];
+        }
+      }
+
+      const courseResponse = new ResponseHandler();
     </script>
   </body>
 </html>
