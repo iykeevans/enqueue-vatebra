@@ -77,6 +77,7 @@
 
 .banner__title {
   font-family: var(--enqueue-heading-font);
+  margin-top: 100px;
 }
 
 .banner__image {
@@ -188,6 +189,15 @@
   .banner__image {
     top: unset;
     height: 500px;
+  }
+
+  .banner__title {
+    width: 70%;
+    margin-top: unset;
+  }
+
+  .banner__paragraph {
+    width: 60%;
   }
 
   .h-md-screen {
