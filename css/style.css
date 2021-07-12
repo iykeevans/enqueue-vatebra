@@ -116,8 +116,8 @@
 }
 
 .curriculum__course:hover {
-  border-left: 3px solid var(--enqueue-primary-color);
-  color: #000;
+  /* border-left: 3px solid var(--enqueue-primary-color); */
+  color: #000 !important;
 }
 
 .curriculum__course--active {
