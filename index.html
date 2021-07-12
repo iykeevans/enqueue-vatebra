@@ -416,7 +416,7 @@
           <div class="col-md-4">
             <div
               class="
-                curriculum__course--active
+                curriculum__course curriculum__course--active
                 cursor-pointer
                 text-lg
                 px-2
@@ -1232,9 +1232,9 @@
           />
         </div>
 
-        <div class="text-lg text-center mb-5">
+        <!-- <div class="text-lg text-center mb-5">
           Over 650 alumni’s with a 94% employment rate in 6months
-        </div>
+        </div> -->
 
         <div class="d-flex justify-content-center">
           <button
@@ -1353,7 +1353,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="applicationModalLabel">Sign up</h5>
+            <h5 class="modal-title" id="applicationModalLabel">Register</h5>
 
             <button
               type="button"
@@ -1375,7 +1375,6 @@
                 autocomplete="off"
                 required
               />
-              <div class="valid-feedback">Looks good!</div>
             </div>
 
             <div class="mb-3">
@@ -1389,7 +1388,6 @@
                 autocomplete="off"
                 required
               />
-              <div class="valid-feedback">Looks good!</div>
             </div>
 
             <div class="mb-3">
@@ -1403,7 +1401,6 @@
                 autocomplete="off"
                 required
               />
-              <div class="valid-feedback">Looks good!</div>
             </div>
 
             <div class="mb-3">
@@ -1417,7 +1414,6 @@
                 autocomplete="off"
                 required
               />
-              <div class="valid-feedback">Looks good!</div>
             </div>
 
             <div>
@@ -1495,7 +1491,13 @@
             ></button>
           </div>
 
-          <div class="modal-body" id="thank-you-modal-body"></div>
+          <div
+            class="modal-body d-flex flex-column align-items-center"
+            id="thank-you-modal-body"
+          >
+            <span></span>
+            <span class="d-flex align-items-center"> </span>
+          </div>
         </div>
       </div>
     </div>
@@ -1506,31 +1508,9 @@
     <script src="./js/owl.carousel.min.js"></script>
 
     <!-- main script -->
-    <script src="./js/stickyNav.js"></script>
+    <script async src="./js/stickyNav.js"></script>
 
-    <script>
-      (function () {
-        var qs,
-          js,
-          q,
-          s,
-          d = document,
-          gi = d.getElementById,
-          ce = d.createElement,
-          gt = d.getElementsByTagName,
-          id = "typef_orm_share",
-          b = "https://embed.typeform.com/";
-        if (!gi.call(d, id)) {
-          js = ce.call(d, "script");
-          js.id = id;
-          js.src = b + "embed.js";
-          q = gt.call(d, "script")[0];
-          q.parentNode.insertBefore(js, q);
-        }
-      })();
-    </script>
-
-    <script>
+    <script async>
       // init owl carousel
       $(document).ready(function () {
         $(".owl-carousel").owlCarousel({
@@ -1630,7 +1610,7 @@
       app.analytics();
     </script>
 
-    <script>
+    <script async>
       class ResponseHandler {
         constructor() {
           this._email = "";
@@ -1647,6 +1627,12 @@
           event.target.classList.add(`${isValid ? "is-valid" : "is-invalid"}`);
         }
 
+        validateEmail(email) {
+          const re =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+        }
+
         handleChange(event) {
           if (!event.target.value.trim()) {
             this.setInputClass(false);
@@ -1658,11 +1644,10 @@
 
         handleSubmit() {
           console.log(this);
-          document
-            .getElementById("application-modal-spinner")
-            .classList.remove("d-none");
+
           let hasError = [];
 
+          // validate input
           for (const key in this) {
             if (Object.hasOwnProperty.call(this, key)) {
               if (!this[key]) {
@@ -1675,7 +1660,10 @@
           }
 
           if (!hasError.includes(true)) {
-            console.log("I am Submiting...", db);
+            // shows loading spinner
+            document
+              .getElementById("application-modal-spinner")
+              .classList.remove("d-none");
 
             db.collection("users")
               .add({
@@ -1688,6 +1676,7 @@
               .then((res) => {
                 console.log("Document written with ID: ", res.id);
 
+                // hide loading spinner
                 document
                   .getElementById("application-modal-spinner")
                   .classList.add("d-none");
