@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enqueue - Responses</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-sm mt-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Curriculum</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+
+        <tbody id="response-table-body"></tbody>
+      </table>
+
+      <div class="w-100 d-flex justify-content-center" id="spinner">
+        <div
+          class="spinner-border ms-3"
+          role="status"
+          style="height: 100px; width: 100px"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        axios
+          .get("https://enqueued-backend.herokuapp.com/api/v1/users")
+          .then(({ data: response }) => {
+            const tr = document.createElement("tr");
+            const serialTD = document.createElement("th");
+            const firstNameTD = document.createElement("td");
+            const lastNameTD = document.createElement("td");
+            const curriculumTD = document.createElement("td");
+            const emailTD = document.createElement("td");
+            const phoneNoTD = document.createElement("td");
+            const createdAtTD = document.createElement("td");
+
+            serialTD.scope = "row";
+
+            response.data.forEach((item, index) => {
+              serialTD.innerText = index + 1;
+              firstNameTD.innerText = item.fname;
+              lastNameTD.innerText = item.lname;
+              curriculumTD.innerText = item.curriculum;
+              emailTD.innerText = item.email;
+              phoneNoTD.innerText = item.phoneNo;
+              createdAtTD.innerHTML = dateFns.format(
+                new Date(item.createdAt),
+                "DD/MM/YYYY"
+              );
+
+              tr.append(serialTD);
+              tr.append(firstNameTD);
+              tr.append(lastNameTD);
+              tr.append(curriculumTD);
+              tr.append(emailTD);
+              tr.append(phoneNoTD);
+              tr.append(createdAtTD);
+
+              document.getElementById("response-table-body").append(tr);
+            });
+
+            document.getElementById("spinner").classList.add("d-none");
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>
