@@ -1714,6 +1714,8 @@
               .catch((err) => {
                 if (err.response.status == 400) {
                   toastr.error("Email already exist");
+                } else {
+                  toastr.error('An Error occured')
                 }
                 console.log(err.response.status);
               })

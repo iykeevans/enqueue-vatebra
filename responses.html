@@ -44,7 +44,9 @@
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
         axios
-          .get("https://enqueued-backend.herokuapp.com/api/v1/users")
+          .get("https://enqueued-backend.herokuapp.com/api/v1/users", {
+            headers: { authorization: localStorage.getItem("token") },
+          })
           .then(({ data: response }) => {
             const tr = document.createElement("tr");
             const serialTD = document.createElement("th");
