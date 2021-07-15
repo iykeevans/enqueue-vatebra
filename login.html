@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enqueue - Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/toastr.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container h-screen">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <form
+          class="d-flex flex-column p-3"
+          style="width: 400px; background: #ccc"
+          onsubmit="login.handleSubmit(event)"
+        >
+          <div class="mb-3">
+            <label for="_email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="_email"
+              name="_email"
+              oninput="login.handleChange(event)"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="_password" class="form-label">Password</label>
+            <input
+              type="text"
+              class="form-control"
+              id="_password"
+              name="_password"
+              oninput="login.handleChange(event)"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <button
+            class="d-flex align-items-center justify-content-center"
+            type="submit"
+          >
+            Login
+            <div
+              class="spinner-border ms-3 d-none"
+              id="spinner"
+              role="status"
+              style="height: 16px; width: 16px"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="./js/toastr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    class LoginHandler {
+      constructor() {
+        this._email = "";
+        this._password = "";
+      }
+
+      setInputClass(isValid = true) {
+        event.target.classList.remove(`${isValid ? "is-invalid" : "is-valid"}`);
+        event.target.classList.add(`${isValid ? "is-valid" : "is-invalid"}`);
+      }
+
+      spinner(status) {
+        if (status == "show") {
+          document.getElementById("spinner").classList.remove(`d-none`);
+        } else {
+          document.getElementById("spinner").classList.add(`d-none`);
+        }
+      }
+
+      handleChange(event) {
+        if (!event.target.value.trim()) {
+          this.setInputClass(false);
+        } else {
+          this.setInputClass();
+          this[event.target.name] = event.target.value;
+        }
+      }
+
+      handleSubmit(event) {
+        event.preventDefault();
+        let hasError = [];
+
+        // validate input
+        for (const key in this) {
+          if (Object.hasOwnProperty.call(this, key)) {
+            if (!this[key]) {
+              document.querySelector(`#${key}`).classList.add("is-invalid");
+              hasError.push(true);
+            } else {
+              hasError.push(false);
+            }
+          }
+        }
+
+        if (!hasError.includes(true)) {
+          this.spinner("show");
+
+          axios
+            .post("https://enqueued-backend.herokuapp.com/api/v1/auth/login", {
+              email: this._email,
+              password: this._password,
+            })
+            .then(
+              ({
+                data: {
+                  data: { token },
+                },
+              }) => {
+                // toastr.error("Login successful");
+                localStorage.setItem("token", token);
+                window.location.assign("/responses.html");
+              }
+            )
+            .catch((error) => {
+              toastr.error("An Error occured");
+            })
+            .finally(() => {
+              this.spinner("hide");
+            });
+        }
+      }
+    }
+
+    const login = new LoginHandler();
+  </script>
+</html>
