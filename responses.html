@@ -48,18 +48,18 @@
             headers: { authorization: localStorage.getItem("token") },
           })
           .then(({ data: response }) => {
-            const tr = document.createElement("tr");
-            const serialTD = document.createElement("th");
-            const firstNameTD = document.createElement("td");
-            const lastNameTD = document.createElement("td");
-            const curriculumTD = document.createElement("td");
-            const emailTD = document.createElement("td");
-            const phoneNoTD = document.createElement("td");
-            const createdAtTD = document.createElement("td");
-
-            serialTD.scope = "row";
-
             response.data.forEach((item, index) => {
+              const tr = document.createElement("tr");
+              const serialTD = document.createElement("th");
+              const firstNameTD = document.createElement("td");
+              const lastNameTD = document.createElement("td");
+              const curriculumTD = document.createElement("td");
+              const emailTD = document.createElement("td");
+              const phoneNoTD = document.createElement("td");
+              const createdAtTD = document.createElement("td");
+
+              serialTD.scope = "row";
+
               serialTD.innerText = index + 1;
               firstNameTD.innerText = item.fname;
               lastNameTD.innerText = item.lname;
@@ -79,7 +79,7 @@
               tr.append(phoneNoTD);
               tr.append(createdAtTD);
 
-              document.getElementById("response-table-body").append(tr);
+              document.getElementById("response-table-body").appendChild(tr);
             });
 
             document.getElementById("spinner").classList.add("d-none");
